@@ -1,0 +1,25 @@
+{
+    "name": "dogescript-highlight",
+    "displayName": "dogescript-highlight",
+    "description": "a syntax highlighter for dogescript",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.66.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "dogescript",
+            "aliases": ["dogescript", "dogescript"],
+            "extensions": [".djs"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "dogescript",
+            "scopeName": "source.djs",
+            "path": "./syntaxes/dogescript.tmLanguage.json"
+        }]
+    }
+}

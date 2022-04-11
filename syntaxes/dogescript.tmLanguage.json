@@ -1,0 +1,87 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "dogescript",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.dogescript",
+					"match": "\\b(rly|many|much|amaze)\\b"
+				},
+				{
+					"name": "keyword.operator.new.dogescript",
+					"match": "new"
+				},
+				{
+					"name": "keyword.operator.dogescript",
+					"match": "\\b(bigify|bigified|smallify|smallified|waite|yelde|not|is|and|or|bigger|smaller|biggerish|smallerish|isa|like|same)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.single.dogescript",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dogescript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.dogescript",
+					"match": "\\b(shh)\\b.*$"
+				},
+				{
+					"name": "comment.block.dogescript",
+					"begin": "quiet",
+					"end": "loud"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"match": "\\b(very)\\s(\\w+)\\b",
+					"captures": {
+						"1": {
+							"name": "variable.language.dogescript"
+						},
+						"2": {
+							"name": "variable.name.dogescript"
+						}
+					}
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"match": "\\b(kindof)\\b",
+					"name": "keyword.operator.expression.typeof.dogescript"
+				}
+			]
+		}
+	},
+	"scopeName": "source.djs"
+}
