@@ -10,7 +10,11 @@
     },
     // symbols used as brackets
     // "brackets": [
-    //     ["{", "}"],
+    //     [
+    //         "such",
+    //         "wow"
+    //     ],
+    // ],
     //     ["[", "]"],
     //     ["(", ")"]
     // ],
@@ -23,14 +27,14 @@
     //     ["'", "'"]
     // ],
     // symbols that can be used to surround a selection
-    "surroundingPairs": [
-        [
-            "such",
-            "wow"
-        ],
-        // ["[", "]"],
-        // ["(", ")"],
-        // ["\"", "\""],
-        // ["'", "'"]
-    ]
+    // "surroundingPairs": [
+    //     [
+    //         "such",
+    //         "wow"
+    //     ],
+    // ["[", "]"],
+    // ["(", ")"],
+    // ["\"", "\""],
+    // ["'", "'"]
+    // ]
 }

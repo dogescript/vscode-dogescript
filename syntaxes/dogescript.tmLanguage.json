@@ -6,6 +6,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#control-flow"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -19,15 +22,14 @@
 		},
 		{
 			"include": "#functions"
+		},
+		{
+			"include": "#module"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [
-				{
-					"name": "keyword.control.dogescript",
-					"match": "\\b(rly|many|much|amaze)\\b"
-				},
 				{
 					"name": "keyword.operator.new.dogescript",
 					"match": "new"
@@ -35,6 +37,18 @@
 				{
 					"name": "keyword.operator.dogescript",
 					"match": "\\b(bigify|bigified|smallify|smallified|waite|yelde|not|is|and|or|bigger|smaller|biggerish|smallerish|isa|like|same)\\b"
+				}
+			]
+		},
+		"control-flow": {
+			"patterns": [
+				{
+					"name": "keyword.control.dogescript",
+					"match": "\\b(rly|many|much|amaze|bork)\\b"
+				},
+				{
+					"name": "keyword.other.chain.dogescript",
+					"match": "\\b(thx)\\b"
 				}
 			]
 		},
@@ -88,18 +102,7 @@
 		"functions": {
 			"patterns": [
 				{
-					"match": "\\b(such)\\s(\\w+)\\b",
-					"captures": {
-						"1": {
-							"name": "storage.type.function.dogescript"
-						},
-						"2": {
-							"name": "entity.name.function.dogescript"
-						}
-					}
-				},
-				{
-					"match": "\\b(such)\\s(\\w+)\\s(much)((?:\\s\\w+)+)",
+					"match": "\\b(such)\\s*(\\w+)(?:\\s*(much)\\s*(.*))?$",
 					"captures": {
 						"1": {
 							"name": "storage.type.function.dogescript"
@@ -108,10 +111,36 @@
 							"name": "entity.name.function.dogescript"
 						},
 						"3": {
-							"name": "entity.name.function.argument.dogescript"
+							"name": "meta.function.expr.dogescript"
 						},
 						"4": {
 							"name": "variable.parameter.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(plz)\\s*(\\w+)",
+					"captures": {
+						"1": {
+							"name": "meta.function.call.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
+						}
+					}
+				}
+			]
+		},
+		"module": {
+			"patterns": [
+				{
+					"match": "\\b(so)\\s*(\\w+)",
+					"captures": {
+						"1": {
+							"name": "entity.name.function.dogescript"
+						},
+						"2": {
+							"name": "meta.module.name.dogescript"
 						}
 					}
 				}
