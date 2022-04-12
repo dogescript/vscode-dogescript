@@ -44,7 +44,15 @@
 			"patterns": [
 				{
 					"name": "keyword.control.dogescript",
-					"match": "\\b(rly|many|much|amaze|bork)\\b"
+					"match": "\\b(rly|many|much|amaze|bork|but)\\b"
+				},
+				{
+					"name": "keyword.control.terminator.dogescript",
+					"match": "\\b(wow)\\b"
+				},
+				{
+					"name": "keyword.other.terminator.dogescript",
+					"match": "\\b(next)\\b"
 				},
 				{
 					"name": "keyword.other.chain.dogescript",
@@ -119,7 +127,7 @@
 					}
 				},
 				{
-					"match": "\\b(plz)\\s*(\\w+)",
+					"match": "\\b(plz)\\s*(\\w+)\\s*",
 					"captures": {
 						"1": {
 							"name": "meta.function.call.dogescript"
