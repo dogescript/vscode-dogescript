@@ -16,6 +16,9 @@
 		},
 		{
 			"include": "#operators"
+		},
+		{
+			"include": "#functions"
 		}
 	],
 	"repository": {
@@ -79,6 +82,38 @@
 				{
 					"match": "\\b(kindof)\\b",
 					"name": "keyword.operator.expression.typeof.dogescript"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"match": "\\b(such)\\s(\\w+)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.function.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(such)\\s(\\w+)\\s(much)((?:\\s\\w+)+)",
+					"captures": {
+						"1": {
+							"name": "storage.type.function.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
+						},
+						"3": {
+							"name": "entity.name.function.argument.dogescript"
+						},
+						"4": {
+							"name": "variable.parameter.dogescript"
+						}
+					}
 				}
 			]
 		}
