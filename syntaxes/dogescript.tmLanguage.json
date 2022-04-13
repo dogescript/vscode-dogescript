@@ -48,7 +48,7 @@
 				},
 				{
 					"name": "keyword.control.terminator.dogescript",
-					"match": "\\b(wow)\\b"
+					"match": "\\b(wow&?)\\b"
 				},
 				{
 					"name": "keyword.other.terminator.dogescript",
@@ -127,10 +127,35 @@
 					}
 				},
 				{
-					"match": "\\b(plz)\\s*(\\w+)\\s*",
+					"match": "\\b(plz|\\.plz)\\s*(\\w+)\\s*",
 					"captures": {
 						"1": {
-							"name": "meta.function.call.dogescript"
+							"name": "keyword.other.function.call.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(\\w+)\\s*(dose)\\s*(\\w+)",
+					"captures": {
+						"1": {
+							"name": "entity.name.dogescript"
+						},
+						"2": {
+							"name": "keyword.other.call.dogescript"
+						},
+						"3": {
+							"name": "entity.name.function.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\s*(dose)\\s*(\\w+)",
+					"captures": {
+						"1": {
+							"name": "keyword.other.call.dogescript"
 						},
 						"2": {
 							"name": "entity.name.function.dogescript"
@@ -149,6 +174,17 @@
 						},
 						"2": {
 							"name": "meta.module.name.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(woof)\\s+(\\w+)",
+					"captures": {
+						"1": {
+							"name": "keyword.other.module.export.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
 						}
 					}
 				}

@@ -69,7 +69,7 @@ very myObj is new Object
 
 jsony is obj
  name: 'blah'
-wow
+  wow
 
 shh module.exports = woofn
 woof woofn
@@ -79,7 +79,9 @@ so http
 http dose createServer with much req res
    res dose writeHead with 200 {'Content-Type': 'text/plain'}
    res dose end with 'so hello\nmuch world'
-wow&
+   wow&
+
+
 .plz listen with 8080
 
 windoge.doge is 'so global, no scope wow'
