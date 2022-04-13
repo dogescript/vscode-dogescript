@@ -5,10 +5,10 @@ import * as assert from 'assert';
 import * as vscode from 'vscode';
 // import * as myExtension from '../../extension';
 
-suite('Extension Test Suite', () => {
+suite('Extension Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
 
-	test('Sample test', () => {
+	test('Sample', () => {
 		assert.strictEqual([1, 2, 3].indexOf(5), -1);
 		assert.strictEqual([1, 2, 3].indexOf(0), -1);
 	});

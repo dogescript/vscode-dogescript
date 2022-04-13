@@ -1,0 +1,7 @@
+{
+  "mocha.files.glob": "out/test/**/*.js",
+  "mocha.requires": [
+    "source-map-support/register"
+  ],
+  "mocha.nycPath": "./node_modules/nyc/bin/nyc"
+}
