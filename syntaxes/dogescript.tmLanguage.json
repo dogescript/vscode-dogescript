@@ -37,6 +37,14 @@
 				{
 					"name": "keyword.operator.dogescript",
 					"match": "\\b(bigify|bigified|smallify|smallified|waite|yelde|not|is|and|or|bigger|smaller|biggerish|smallerish|isa|like|same)\\b"
+				},
+				{
+					"name": "keyword.other.strict.dogescript",
+					"match": "\\b(trained)\\b"
+				},
+				{
+					"name": "keyword.other.debugger.dogescript",
+					"match": "\\b(debooger}pawse)\\b"
 				}
 			]
 		},

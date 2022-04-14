@@ -9,6 +9,6 @@ plz foo with bar thx
 such foo
 wow
 
-many foo is wow and foo is less 2
+many foo is bar and foo is less 2
   amaze foo
 wow
