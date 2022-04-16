@@ -2,14 +2,18 @@ shh THIS IS DOGESCRIPT
 
 quiet
     dogescript was created by Zach Bruggeman
-    and has been improved by many contributors
-    such appreciate, much thanks, wow
+    and has been improved by many contributors such appreciate, much thanks, wow
 loud
 
 trained
 
 so dogeudle
-so boring as wow
+
+classy Rectangle grows Shape
+  git area
+    amaze dis dose calcArea
+  wow
+wow
 
 very dogescript is 'such messy; very doge-friendly'
 
@@ -28,7 +32,7 @@ very cat is 'not a doge'
 rly cat is 'doge'
     plz console.loge with 'wow, such liar, much cat'
 but rly cat is 'not a doge'
-    plz console.loge with 'very truth, such belief, wow'
+    console dose loge with 'very truth'
 but
     plz console.loge with 'such impossible'
 wow

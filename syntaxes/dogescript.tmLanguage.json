@@ -3,6 +3,9 @@
 	"name": "dogescript",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -10,9 +13,6 @@
 		},
 		{
 			"include": "#strings"
-		},
-		{
-			"include": "#comments"
 		},
 		{
 			"include": "#variables"
@@ -25,6 +25,12 @@
 		},
 		{
 			"include": "#module"
+		},
+		{
+			"include": "#classes"
+		},
+		{
+			"include": "#builtin"
 		}
 	],
 	"repository": {
@@ -44,7 +50,7 @@
 				},
 				{
 					"name": "keyword.other.debugger.dogescript",
-					"match": "\\b(debooger}pawse)\\b"
+					"match": "\\b(debooger|pawse)\\b"
 				}
 			]
 		},
@@ -52,15 +58,15 @@
 			"patterns": [
 				{
 					"name": "keyword.control.dogescript",
-					"match": "\\b(rly|many|much|amaze|bork|but)\\b"
-				},
-				{
-					"name": "keyword.control.terminator.dogescript",
-					"match": "\\b(wow&?)\\b"
+					"match": "\\b(rly|many|amaze|much|bork|but)\\b"
 				},
 				{
 					"name": "keyword.other.terminator.dogescript",
 					"match": "\\b(next)\\b"
+				},
+				{
+					"name": "keyword.control.terminator.dogescript",
+					"match": "\\b(wow&?)\\b"
 				},
 				{
 					"name": "keyword.other.chain.dogescript",
@@ -112,6 +118,10 @@
 				{
 					"match": "\\b(kindof)\\b",
 					"name": "keyword.operator.expression.typeof.dogescript"
+				},
+				{
+					"match": "\\b(giv|levl)\\b",
+					"name": "keyword.operator.property.accessor.dogescript"
 				}
 			]
 		},
@@ -169,32 +179,139 @@
 							"name": "entity.name.function.dogescript"
 						}
 					}
+				},
+				{
+					"match": "\\b(with)\\b",
+					"name": "keyword.other.call.operator.dogescript"
 				}
 			]
 		},
 		"module": {
 			"patterns": [
 				{
-					"match": "\\b(so)\\s*(\\w+)",
+					"match": "\\b(so)\\s*(\\w+)(?:\\s*(as)\\s*(.*))?",
 					"captures": {
 						"1": {
 							"name": "entity.name.function.dogescript"
 						},
 						"2": {
 							"name": "meta.module.name.dogescript"
+						},
+						"3": {
+							"name": "meta.import.operator.dogescript"
+						},
+						"4": {
+							"name": "meta.import.name.dogescript"
 						}
 					}
 				},
 				{
-					"match": "\\b(woof)\\s+(\\w+)",
+					"match": "\\b(woof)\\s+(\\w+)(?:\\s*(be))",
 					"captures": {
 						"1": {
 							"name": "keyword.other.module.export.dogescript"
 						},
 						"2": {
 							"name": "entity.name.function.dogescript"
+						},
+						"3": {
+							"name": "keyword.other.module.export.declaration.dogescript"
 						}
 					}
+				},
+				{
+					"match": "\\b(woof)\\b",
+					"name": "keyword.other.module.export.dogescript"
+				}
+			]
+		},
+		"classes": {
+			"patterns": [
+				{
+					"match": "\\b(classy)\\s+(\\w+)(?:\\s*(grows)\\s*(.*))?$",
+					"captures": {
+						"1": {
+							"name": "storage.type.class.dogescript"
+						},
+						"2": {
+							"name": "entity.name.class.dogescript"
+						},
+						"3": {
+							"name": "storage.class.modifier.dogescript"
+						},
+						"4": {
+							"name": "entity.other.inherited-class.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(maker)\\b",
+					"name": "meta.method.declaration.dogescript"
+				},
+				{
+					"match": "\\b(sooper)\\b",
+					"name": "variable.language.super.dogescript"
+				},
+				{
+					"match": "\\b(git)\\s+(\\w+)",
+					"captures": {
+						"1": {
+							"name": "storage.type.method.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(sit)\\s*(\\w+)(?:\\s*(much)\\s*(.*))?$",
+					"captures": {
+						"1": {
+							"name": "storage.modifier.method.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
+						},
+						"3": {
+							"name": "meta.function.expr.dogescript"
+						},
+						"4": {
+							"name": "variable.parameter.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(stay)\\s*(\\w+)(?:\\s*(much)\\s*(.*))?$",
+					"captures": {
+						"1": {
+							"name": "storage.modifier.static.dogescript"
+						},
+						"2": {
+							"name": "entity.name.function.dogescript"
+						},
+						"3": {
+							"name": "meta.function.expr.dogescript"
+						},
+						"4": {
+							"name": "variable.parameter.dogescript"
+						}
+					}
+				},
+				{
+					"match": "\\b(dis)\\b",
+					"name": "variable.language.this.dogescript"
+				}
+			]
+		},
+		"builtin": {
+			"patterns": [
+				{
+					"match": "\\b(windoge|dogeument)\\b",
+					"name": "support.variable.dogescript"
+				},
+				{
+					"match": "\\b(console\\.loge)\\b",
+					"name": "support.function.dogescript"
 				}
 			]
 		}

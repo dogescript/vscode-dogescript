@@ -1,8 +1,8 @@
 {
-    "name": "dogescript-highlight",
-    "displayName": "dogescript-highlight",
-    "description": "a syntax highlighter for dogescript",
-    "version": "0.0.1",
+    "name": "dogescript-support",
+    "displayName": "dogescript-support",
+    "description": "vscode extensions for the dogescript language",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.66.0"
     },

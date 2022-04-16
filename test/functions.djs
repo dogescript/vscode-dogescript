@@ -8,3 +8,4 @@ plz foo with 'a' 'b' thx
 
 console dose loge with 'foo'&
   dose loge with bar
+wow
