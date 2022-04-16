@@ -37,10 +37,11 @@
         "lint": "eslint . --ext .ts,.tsx",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
-        "test": "node ./out/test/runTest.js"
+        "test": "jest --env=node --colors test"
     },
     "devDependencies": {
         "@types/glob": "^7.1.1",
+        "@types/jest": "^27.4.1",
         "@types/mocha": "^5.2.6",
         "@types/node": "^12.12.0",
         "@types/vscode": "^1.32.0",
@@ -48,10 +49,16 @@
         "@typescript-eslint/parser": "^4.16.0",
         "@vscode/test-electron": "^1.6.1",
         "eslint": "^7.21.0",
+        "fs": "0.0.1-security",
         "glob": "^7.1.4",
-        "mocha": "^6.1.4",
+        "jest": "^27.5.1",
         "nyc": "^15.1.0",
+        "path": "^0.12.7",
         "source-map-support": "^0.5.12",
-        "typescript": "^4.5.5"
+        "ts-jest": "^27.1.4",
+        "typescript": "^4.5.5",
+        "vscode-oniguruma": "^1.6.2",
+        "vscode-oniguruma-wasm": "^1.1.0",
+        "vscode-textmate": "^7.0.1"
     }
 }
