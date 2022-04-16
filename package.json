@@ -1,7 +1,11 @@
 {
     "name": "dogescript-support",
     "displayName": "dogescript-support",
-    "description": "vscode extensions for the dogescript language",
+    "description": "Rich dogescript language support for Visual Studio Code",
+    "publisher": "dogescript",
+    "author": {
+        "name": "dogescript team"
+    },
     "version": "0.1.0",
     "engines": {
         "vscode": "^1.66.0"
@@ -20,7 +24,7 @@
                 "extensions": [
                     ".djs"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./languages/language-configuration.json"
             }
         ],
         "grammars": [
