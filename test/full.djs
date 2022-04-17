@@ -83,8 +83,10 @@ so http
 http dose createServer with much req res
    res dose writeHead with 200 {'Content-Type': 'text/plain'}
    res dose end with 'so hello\nmuch world'
-   wow&
+  wow&
+wow&
 
+thx
 
 .plz listen with 8080
 
