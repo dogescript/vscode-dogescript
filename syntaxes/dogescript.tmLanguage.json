@@ -37,14 +37,6 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.operator.new.dogescript",
-					"match": "new"
-				},
-				{
-					"name": "keyword.operator.dogescript",
-					"match": "\\b(bigify|bigified|smallify|smallified|waite|yelde|not|is|and|or|bigger|smaller|biggerish|smallerish|isa|like|same)\\b"
-				},
-				{
 					"name": "keyword.other.strict.dogescript",
 					"match": "\\b(trained)\\b"
 				},
@@ -116,6 +108,14 @@
 		"operators": {
 			"patterns": [
 				{
+					"name": "keyword.operator.new.dogescript",
+					"match": "new"
+				},
+				{
+					"name": "keyword.operator.dogescript",
+					"match": "\\b(bigify|bigified|smallify|smallified|waite|yelde|not|is|and|or|bigger|smaller|biggerish|smallerish|isa|like|same)\\b"
+				},
+				{
 					"match": "\\b(kindof)\\b",
 					"name": "keyword.operator.expression.typeof.dogescript"
 				},
@@ -162,7 +162,7 @@
 							"name": "entity.name.dogescript"
 						},
 						"2": {
-							"name": "keyword.other.call.dogescript"
+							"name": "keyword.other.function.call.dogescript"
 						},
 						"3": {
 							"name": "entity.name.function.dogescript"
@@ -173,7 +173,7 @@
 					"match": "\\s*(dose)\\s*(\\w+)",
 					"captures": {
 						"1": {
-							"name": "keyword.other.call.dogescript"
+							"name": "keyword.other.function.call.dogescript"
 						},
 						"2": {
 							"name": "entity.name.function.dogescript"

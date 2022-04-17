@@ -1,5 +1,4 @@
-import * as vsctm from "vscode-textmate";
-import { getDogeGrammar } from "./grammar.loader";
+import { TestHelper, getDogeGrammar } from "./grammar.loader";
 
 const grammar = getDogeGrammar();
 
@@ -8,35 +7,51 @@ describe("handles declaration", () => {
     const text = [
       `such foo`
     ]
-    let ruleStack = vsctm.INITIAL;
+    const helper = new TestHelper((await grammar), text);
+    const tokenMap = helper.getTokenizedLine();
 
-    const line = (await grammar).tokenizeLine(text[0], ruleStack);
-    const tokens = line.tokens;
-
-    expect(tokens[0].scopes).toContain("storage.type.function.dogescript");
-    expect(tokens[2].scopes).toContain("entity.name.function.dogescript");
+    expect(tokenMap.get("such")).toContain("storage.type.function.dogescript");
+    expect(tokenMap.get("foo")).toContain("entity.name.function.dogescript");
   });
 
   test("with args", async () => {
     const text = [
       `such foo much bar baz`
     ]
-    let ruleStack = vsctm.INITIAL;
 
-    const line = (await grammar).tokenizeLine(text[0], ruleStack);
-    const tokens = line.tokens;
-
-    const tokenMap = new Map();
-    for (var token of tokens) {
-      const tokenText = text[0].substring(token.startIndex, token.endIndex);
-      tokenMap.set(tokenText, token.scopes);
-    }
+    const helper = new TestHelper((await grammar), text);
+    const tokenMap = helper.getTokenizedLine();
 
     expect(tokenMap.get("such")).toContain("storage.type.function.dogescript");
-    expect(tokens[2].scopes).toContain("entity.name.function.dogescript");
-    // much
-    expect(tokens[4].scopes).toContain("meta.function.expr.dogescript");
-    // "bar baz"
-    expect(tokens[6].scopes).toContain("variable.parameter.dogescript");
+    expect(tokenMap.get("foo")).toContain("entity.name.function.dogescript");
+    expect(tokenMap.get("much")).toContain("meta.function.expr.dogescript");
+    expect(tokenMap.get("bar baz")).toContain("variable.parameter.dogescript");
+  });
+});
+
+describe("handles function calling", () => {
+  test("with args", async () => {
+    const text = [
+      `plz foo with bar`
+    ]
+
+    const helper = new TestHelper((await grammar), text);
+    const tokenMap = helper.getTokenizedLine();
+
+    expect(tokenMap.get("plz")).toContain("keyword.other.function.call.dogescript");
+    expect(tokenMap.get("foo")).toContain("entity.name.function.dogescript");
+    expect(tokenMap.get("with")).toContain("keyword.other.call.operator.dogescript");
+  });
+  test("dose call", async () => {
+    const text = [
+      `console dose log`
+    ]
+
+    const helper = new TestHelper((await grammar), text);
+    const tokenMap = helper.getTokenizedLine();
+
+    expect(tokenMap.get("console")).toContain("entity.name.dogescript");
+    expect(tokenMap.get("dose")).toContain("keyword.other.function.call.dogescript");
+    expect(tokenMap.get("log")).toContain("entity.name.function.dogescript");
   });
 });
