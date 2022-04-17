@@ -27,8 +27,8 @@
                 ],
                 "configuration": "./languages/language-configuration.json",
                 "icon": {
-                    "dark": "./icons/logo-face.png",
-                    "light": "./icons/logo-face.png"
+                    "dark": "./icons/logo-face-300x300.png",
+                    "light": "./icons/logo-face-300x300.png"
                 }
             }
         ],
