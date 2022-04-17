@@ -192,7 +192,7 @@
           "match": "\\b(so)\\s*(\\w+)(?:\\s*(as)\\s*(.*))?",
           "captures": {
             "1": {
-              "name": "entity.name.function.dogescript"
+              "name": "keyword.other.module.import.dogescript"
             },
             "2": {
               "name": "meta.module.name.dogescript"
@@ -206,22 +206,18 @@
           }
         },
         {
-          "match": "\\b(woof)\\s+(\\w+)(?:\\s*(be))",
+          "match": "\\s*(woof)\\s+(\\w+)(?:\\s*(be))?",
           "captures": {
             "1": {
               "name": "keyword.other.module.export.dogescript"
             },
             "2": {
-              "name": "entity.name.function.dogescript"
+              "name": "meta.export.name.dogescript"
             },
             "3": {
               "name": "keyword.other.module.export.declaration.dogescript"
             }
           }
-        },
-        {
-          "match": "\\b(woof)\\b",
-          "name": "keyword.other.module.export.dogescript"
         }
       ]
     },

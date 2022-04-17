@@ -1,26 +1,6 @@
 import { TestHelper, getDogeGrammar } from "./grammar.loader";
 const grammar = getDogeGrammar();
 
-
-// "patterns": [
-//   {
-//     "name": "keyword.control.dogescript",
-//     "match": "\\b(rly|many|amaze|much|bork|but)\\b"
-//   },
-//   {
-//     "name": "keyword.other.terminator.dogescript",
-//     "match": "\\b(next)\\b"
-//   },
-//   {
-//     "name": "keyword.control.terminator.dogescript",
-//     "match": "\\b(wow&?)\\b"
-//   },
-//   {
-//     "name": "keyword.other.chain.dogescript",
-//     "match": "\\b(thx)\\b"
-//   }
-// ]
-
 describe("handles control flow keywords", () => {
 
   test.each([
