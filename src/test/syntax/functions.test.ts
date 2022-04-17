@@ -42,6 +42,19 @@ describe("handles function calling", () => {
     expect(tokenMap.get("foo")).toContain("entity.name.function.dogescript");
     expect(tokenMap.get("with")).toContain("keyword.other.call.operator.dogescript");
   });
+
+
+  test("identifies super keyword", async () => {
+    const text = [
+      `plz sooper with 5`
+    ]
+
+    const helper = new TestHelper((await grammar), text);
+    const tokenMap = helper.getTokenizedLine();
+
+    expect(tokenMap.get("sooper")).toContain("variable.language.super.dogescript");
+  });
+
   test("dose call", async () => {
     const text = [
       `console dose log`

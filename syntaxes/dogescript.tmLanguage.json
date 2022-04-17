@@ -145,13 +145,21 @@
           }
         },
         {
+          "comment": "Match function invocation",
           "match": "\\b(plz|\\.plz)\\s*(\\w+)\\s*",
           "captures": {
             "1": {
               "name": "keyword.other.function.call.dogescript"
             },
             "2": {
-              "name": "entity.name.function.dogescript"
+              "name": "entity.name.function.dogescript",
+              "patterns": [
+                {
+                  "comment": "Identify super call",
+                  "match": "\\b(sooper)\\b",
+                  "name": "variable.language.super.dogescript"
+                }
+              ]
             }
           }
         },
@@ -245,42 +253,24 @@
           "name": "meta.method.declaration.dogescript"
         },
         {
-          "match": "\\b(sooper)\\b",
-          "name": "variable.language.super.dogescript"
-        },
-        {
-          "match": "\\b(git)\\s+(\\w+)",
+          "comment": "Match getter or setter or static function declarations",
+          "match": "\\b(git|sit|stay)\\s*(\\w+)(?:\\s*(much)\\s*(.*))?$",
           "captures": {
             "1": {
-              "name": "storage.type.method.dogescript"
-            },
-            "2": {
-              "name": "entity.name.function.dogescript"
-            }
-          }
-        },
-        {
-          "match": "\\b(sit)\\s*(\\w+)(?:\\s*(much)\\s*(.*))?$",
-          "captures": {
-            "1": {
-              "name": "storage.modifier.method.dogescript"
-            },
-            "2": {
-              "name": "entity.name.function.dogescript"
-            },
-            "3": {
-              "name": "meta.function.expr.dogescript"
-            },
-            "4": {
-              "name": "variable.parameter.dogescript"
-            }
-          }
-        },
-        {
-          "match": "\\b(stay)\\s*(\\w+)(?:\\s*(much)\\s*(.*))?$",
-          "captures": {
-            "1": {
-              "name": "storage.modifier.static.dogescript"
+              "patterns": [
+                {
+                  "match": "\\b(git)\\b",
+                  "name": "storage.type.method.dogescript"
+                },
+                {
+                  "match": "\\b(sit)\\b",
+                  "name": "storage.type.method.dogescript"
+                },
+                {
+                  "match": "\\b(stay)\\b",
+                  "name": "storage.modifier.static.dogescript"
+                }
+              ]
             },
             "2": {
               "name": "entity.name.function.dogescript"

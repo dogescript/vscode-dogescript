@@ -4,6 +4,7 @@ wow
 classy Rectangle grows Shape
   maker
     plz sooper with 4
+    plz foo with 5
   wow
 
   such calcArea
