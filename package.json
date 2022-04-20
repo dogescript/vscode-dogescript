@@ -11,7 +11,7 @@
         "type": "git",
         "url": "https://github.com/dogescript/vscode-dogescript.git"
     },
-    "version": "0.1.0",
+    "version": "0.1.1",
     "engines": {
         "vscode": "^1.66.0"
     },
@@ -31,8 +31,8 @@
                 ],
                 "configuration": "./languages/language-configuration.json",
                 "icon": {
-                    "dark": "icons/file.png",
-                    "light": "icons/file.png"
+                    "dark": "./icons/file.png",
+                    "light": "./icons/file.png"
                 }
             }
         ],
