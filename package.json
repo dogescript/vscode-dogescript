@@ -6,6 +6,7 @@
     "author": {
         "name": "dogescript team"
     },
+    "icon": "./icons/extension.png",
     "version": "0.1.0",
     "engines": {
         "vscode": "^1.66.0"
@@ -24,7 +25,11 @@
                 "extensions": [
                     ".djs"
                 ],
-                "configuration": "./languages/language-configuration.json"
+                "configuration": "./languages/language-configuration.json",
+                "icon": {
+                    "dark": "./icons/file.png",
+                    "light": "./icons/file.png"
+                }
             }
         ],
         "grammars": [
